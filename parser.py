@@ -48,6 +48,9 @@ with open(file1, 'r', encoding='utf-8') as f, \
          while line.count("user-department") != 1:
              line = f.readline()
              if line.count("user-department") ==1:
+               if line.find("<", start) == -1: # Проверка нименование отдела на одной строке? Если нет добавить следующую строку
+                   next_line = f.readline()
+                   line = line + next_line
                start = line.find('>') + 1
                end = line.find("<", start)
                department = line[start:end] if start > 0 and end > 0 else ''
