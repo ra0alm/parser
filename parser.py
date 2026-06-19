@@ -91,12 +91,13 @@ with open(file1, 'r', encoding='utf-8') as f, \
                   attempts = 0
                break        
          #print(line, end='')
-         print (f'{department} | {position:31} | {fio:30} | {phc:12} | {phv:12}')
+         #print (f'{department} | {position:31} | {fio:30} | {phc:12} | {phv:12}')
          #print (position)
 
-         # запись в файл
+         # запись в текстовый файл 
          f_out.write(department + '\n')
-         f_out.write(f'{position:31} | {fio:30}\n')
+         f_out.write(f'{position:31} | {fio:30} | {phv:15} | {phc:12} \n')
+         
          #f_out.write(fio + '\n')
          
          a+=1
